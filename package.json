@@ -1,0 +1,24 @@
+{
+  "name": "sandsea",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "lucide-react": "^1.8.0",
+    "next": "16.2.4",
+    "react": "^19.0.0-rc-66855b96d6-20230810",
+    "react-dom": "^19.0.0-rc-66855b96d6-20230810"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.4",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.1"
+  }
+}
