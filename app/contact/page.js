@@ -13,6 +13,8 @@ export default function Contact() {
     description: ''
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -22,14 +24,37 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: '', phone: '', location: '', description: '' })
-      setSubmitted(false)
-    }, 3000)
+    setLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitted(true)
+        setFormData({ name: '', phone: '', location: '', description: '' })
+        setTimeout(() => {
+          setSubmitted(false)
+        }, 3000)
+      } else {
+        setError(result.error || 'Failed to submit form')
+      }
+    } catch (err) {
+      setError('An error occurred while submitting your form')
+      console.error('Form submission error:', err)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -55,6 +80,11 @@ export default function Contact() {
             {submitted && (
               <div className="bg-green-50 text-green-700 p-4 rounded-lg mb-6 border border-green-200">
                 Thank you! We'll contact you soon with your free estimate.
+              </div>
+            )}
+            {error && (
+              <div className="bg-red-50 text-red-700 p-4 rounded-lg mb-6 border border-red-200">
+                {error}
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -108,9 +138,10 @@ export default function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 font-bold text-lg"
+                disabled={loading}
+                className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 font-bold text-lg disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
-                📩 Request Estimate
+                {loading ? '⏳ Sending...' : '📩 Request Estimate'}
               </button>
             </form>
           </div>
@@ -141,8 +172,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Email</p>
-                  <a href="mailto:info@ojosjunk.com" className="text-lg font-bold text-green-600 hover:underline">
-                    info@ojosjunk.com
+                  <a href="mailto:jojo@877junkyjo.com" className="text-lg font-bold text-green-600 hover:underline">
+                    jojo@877junkyjo.com
                   </a>
                 </div>
               </div>

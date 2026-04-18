@@ -33,14 +33,14 @@ export default function Services() {
                 We remove unwanted items from homes, apartments, and properties — quickly and efficiently. Whether you're decluttering or preparing for a move, we handle it all with care.
               </p>
             </div>
-            <div className="bg-blue-50 rounded-lg overflow-hidden h-80">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Junk removal service" className="w-full h-full object-cover" />
+            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-80">
+              <img src="/images/junk-home.jpg" alt="Junk removal service" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <div className="bg-green-50 rounded-lg overflow-hidden h-80">
-              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="Demo and cleanup service" className="w-full h-full object-cover" />
+            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-80">
+              <img src="/images/demo.jpg" alt="Demo and cleanup service" className="w-full h-full object-cover rounded-lg" />
             </div>
             <div>
               <div className="flex items-center gap-4 mb-4">
@@ -67,14 +67,14 @@ export default function Services() {
                 We haul away wood, drywall, scrap, and other materials so your job site stays clean and safe. Perfect for contractors and property managers.
               </p>
             </div>
-            <div className="bg-yellow-50 rounded-lg overflow-hidden h-80">
-              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="Construction debris removal" className="w-full h-full object-cover" />
+            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-80">
+              <img src="/images/contractors.jpg" alt="Construction debris removal" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-purple-50 rounded-lg overflow-hidden h-80">
-              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&h=400&fit=crop" alt="Estate cleanout service" className="w-full h-full object-cover" />
+            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-80">
+              <img src="/images/estate.jpg" alt="Estate cleanout service" className="w-full h-full object-cover rounded-lg" />
             </div>
             <div>
               <div className="flex items-center gap-4 mb-4">

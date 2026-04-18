@@ -30,9 +30,9 @@ export default function HomePage() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-r from-orange-600 to-orange-700 py-20 px-4 text-center text-white relative overflow-hidden" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=400&fit=crop")', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div className="relative z-10">
+      <section className="py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center" style={{backgroundImage: 'url("/images/truck-hero.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', minHeight: '400px'}}>
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="relative z-10 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Junk Removal in Brooklyn — Fast, Same-Day Service
           </h1>
@@ -152,14 +152,14 @@ export default function HomePage() {
                 </button>
               </Link>
             </div>
-            <div className="bg-blue-50 rounded-lg overflow-hidden h-80">
-              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Home junk removal service" className="w-full h-full object-cover rounded-lg" />
+            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-80">
+              <img src="/images/junk-home.jpg" alt="Home junk removal service" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mt-16">
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg p-8 flex items-center justify-center overflow-hidden h-80">
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=400&fit=crop" alt="Commercial junk removal truck" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/contractors.jpg" alt="Commercial junk removal truck" className="w-full h-full object-cover rounded-lg" />
             </div>
             <div className="flex flex-col justify-center">
               <h3 className="text-3xl font-bold mb-4">Junk Removal for Businesses & Contractors</h3>
