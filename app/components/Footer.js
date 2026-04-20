@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-lg font-bold mb-4 text-orange-500">JOJO'S JUNK & DEMO</h3>
+            <h3 className="text-lg font-bold mb-4 text-orange-500">887JUNKY JO</h3>
             <p className="text-gray-400">Fast, reliable junk removal serving Brooklyn and surrounding areas.</p>
           </div>
           <div>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; 2026 OJO's Junk & Demo Removal. All rights reserved.</p>
+          <p>&copy; 2026 887Junky Jo. All rights reserved.</p>
         </div>
       </div>
     </footer>

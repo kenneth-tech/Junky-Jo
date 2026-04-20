@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: "OJO'S Junk & Demo Removal - Brooklyn",
+  title: '887Junky Jo - Brooklyn',
   description: 'Fast, same-day junk removal service in Brooklyn, Rockaways & South Queens. Call 877-JUNKY-JO today!',
 }
 

@@ -24,10 +24,10 @@ export default function About() {
               <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
                 <Users className="text-orange-600" size={32} />
               </div>
-              <h2 className="text-3xl font-bold">About OJO's</h2>
+              <h2 className="text-3xl font-bold">About 887Junky Jo</h2>
             </div>
             <p className="text-gray-600 text-lg mb-4">
-              OJO's Junk & Demo Removal is a locally operated junk removal service based in Brooklyn. We help homeowners, contractors, and businesses remove unwanted items quickly, safely, and professionally.
+              887Junky Jo is a locally operated junk removal service based in Brooklyn. We help homeowners, contractors, and businesses remove unwanted items quickly, safely, and professionally.
             </p>
             <p className="text-gray-600 text-lg mb-4">
               Our goal is simple — make junk removal easy, fast, and stress-free. Whether it's a small pickup or a full property cleanout, our team shows up ready to work.
@@ -61,9 +61,9 @@ export default function About() {
           </div>
 
           <div className="mt-12 p-8 bg-orange-50 rounded-lg">
-            <h3 className="text-2xl font-bold mb-4">Why Choose OJO's?</h3>
+            <h3 className="text-2xl font-bold mb-4">Why Choose 887Junky Jo?</h3>
             <p className="text-gray-600 text-lg">
-              We're not just another junk removal service. We're local, we're professional, and we genuinely care about making your life easier. When you call OJO's, you get a team that's committed to doing the job right the first time.
+              We're not just another junk removal service. We're local, we're professional, and we genuinely care about making your life easier. When you call 887Junky Jo, you get a team that's committed to doing the job right the first time.
             </p>
           </div>
         </div>
