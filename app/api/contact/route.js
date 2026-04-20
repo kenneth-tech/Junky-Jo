@@ -38,7 +38,7 @@ export async function POST(request) {
       
       const emailResponse = await resend.emails.send({
         from: '887Junky Jo <onboarding@resend.dev>',
-        to: 'kenneth.rillamas@sandseamedia.com',
+        to: 'jojo@877junkyjo.com',
         subject: `New Lead Submission from ${formData.name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
