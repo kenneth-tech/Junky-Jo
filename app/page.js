@@ -37,8 +37,8 @@ export default function HomePage() {
           <Image
             src="/images/LOGO.png"
             alt="887 Junky Jo Logo"
-            width={150}
-            height={150}
+            width={200}
+            height={200}
             className="mx-auto mb-3 sm:mb-4 md:mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
           />
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
