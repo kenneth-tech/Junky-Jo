@@ -31,7 +31,7 @@ export default function HomePage() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center" style={{backgroundImage: 'url("/images/truck.png")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', minHeight: '400px'}}>
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center min-h-screen sm:min-h-[600px] md:min-h-[700px] lg:min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/images/truck.png")', backgroundAttachment: 'fixed'}}>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Image
@@ -39,7 +39,7 @@ export default function HomePage() {
             alt="887 Junky Jo Logo"
             width={150}
             height={150}
-            className="mx-auto mb-4 sm:mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
+            className="mx-auto mb-3 sm:mb-4 md:mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
           />
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
             Junk Removal in Brooklyn — Fast, Same-Day Service
