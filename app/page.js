@@ -133,8 +133,8 @@ export default function HomePage() {
               { icon: Package, label: 'Estate cleanouts' },
               { icon: Truck, label: 'General junk removal' }
             ].map((service, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center text-center">
-                <service.icon size={40} className="text-orange-600 mb-3" />
+              <div key={idx} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer">
+                <service.icon size={40} className="text-orange-600 mb-3 transition-transform duration-300 group-hover:scale-110" />
                 <span className="font-medium">{service.label}</span>
               </div>
             ))}
