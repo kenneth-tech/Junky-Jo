@@ -37,27 +37,27 @@ export default function HomePage() {
           <Image
             src="/images/LOGO.png"
             alt="887 Junky Jo Logo"
-            width={200}
-            height={200}
-            className="mx-auto mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
+            width={150}
+            height={150}
+            className="mx-auto mb-4 sm:mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
           />
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
             Junk Removal in Brooklyn — Fast, Same-Day Service
           </h1>
-          <p className="text-xl mb-4">
+          <p className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
             We remove junk, debris, and clutter from your home or job site.
           </p>
-          <p className="text-2xl font-bold mb-8">You point — we haul it.</p>
+          <p className="text-lg sm:text-xl md:text-2xl font-bold mb-6 sm:mb-8">You point — we haul it.</p>
 
-          <div className="flex flex-col md:flex-row justify-center gap-4 mb-8">
-            <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
-              <button className="bg-white text-orange-600 px-8 py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2 text-lg">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full">
+            <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <button className="bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2 text-base sm:text-lg w-full">
                 <Phone size={24} />
                 Call 877-JUNKY-JO
               </button>
             </a>
-            <Link href="/contact">
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-orange-600 font-bold flex items-center justify-center gap-2 text-lg">
+            <Link href="/contact" className="w-full sm:w-auto">
+              <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-white hover:text-orange-600 font-bold flex items-center justify-center gap-2 text-base sm:text-lg w-full">
                 <ClipboardList size={24} />
                 Get Free Estimate
               </button>
@@ -67,23 +67,23 @@ export default function HomePage() {
       </section>
 
       {/* TRUST STRIP */}
-      <section className="bg-gray-50 py-8 px-4">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
-          <div className="flex items-center justify-center gap-3">
-            <CheckCircle className="text-green-600" size={24} />
-            <span className="font-semibold">Same-Day Service</span>
+      <section className="bg-gray-50 py-8 sm:py-12 px-4">
+        <div className="max-w-2xl mx-auto grid grid-cols-2 gap-6 sm:gap-8">
+          <div className="flex items-start justify-center gap-3">
+            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Same-Day Service</span>
           </div>
-          <div className="flex items-center justify-center gap-3">
-            <CheckCircle className="text-green-600" size={24} />
-            <span className="font-semibold">Locally Owned</span>
+          <div className="flex items-start justify-center gap-3">
+            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Locally Owned</span>
           </div>
-          <div className="flex items-center justify-center gap-3">
-            <CheckCircle className="text-green-600" size={24} />
-            <span className="font-semibold">No Hidden Fees</span>
+          <div className="flex items-start justify-center gap-3">
+            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">No Hidden Fees</span>
           </div>
-          <div className="flex items-center justify-center gap-3">
-            <CheckCircle className="text-green-600" size={24} />
-            <span className="font-semibold">Heavy Lifting Included</span>
+          <div className="flex items-start justify-center gap-3">
+            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
+            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Heavy Lifting Included</span>
           </div>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function HomePage() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">Junk removal in 3 simple steps</h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div className="flex flex-col items-center text-center">
               <div className="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mb-6 text-white">
                 <Phone size={48} />
@@ -122,7 +122,7 @@ export default function HomePage() {
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">What We Remove</h2>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               { icon: Sofa, label: 'Furniture removal' },
               { icon: Refrigerator, label: 'Appliances' },
@@ -143,35 +143,35 @@ export default function HomePage() {
       </section>
 
       {/* RESIDENTIAL & COMMERCIAL */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-16 sm:py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="flex flex-col justify-center">
-              <h3 className="text-3xl font-bold mb-4">Home Junk Removal Made Easy</h3>
-              <p className="text-gray-600 text-lg mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+            <div className="order-2 md:order-1 flex flex-col justify-center">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Home Junk Removal Made Easy</h3>
+              <p className="text-gray-600 text-base sm:text-lg mb-3">
                 From cluttered basements to full house cleanouts, we handle everything.
               </p>
-              <p className="text-gray-600 text-lg mb-6">
+              <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
                 No lifting, no stress — just point and we'll take care of the rest.
               </p>
               <Link href="/services">
-                <button className="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700 w-fit">
+                <button className="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700 w-fit text-sm sm:text-base">
                   Learn More
                 </button>
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-80">
+            <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
               <img src="/images/junk-home.jpg" alt="Home junk removal service" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mt-16">
-            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg p-8 flex items-center justify-center overflow-hidden h-80">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-12 md:mt-16">
+            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
               <img src="/images/contractors.jpg" alt="Commercial junk removal truck" className="w-full h-full object-cover rounded-lg" />
             </div>
             <div className="flex flex-col justify-center">
-              <h3 className="text-3xl font-bold mb-4">Junk Removal for Businesses & Contractors</h3>
-              <p className="text-gray-600 text-lg mb-4">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Junk Removal for Businesses & Contractors</h3>
+              <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-4">
                 We work with contractors, property managers, and business owners to remove debris quickly and efficiently — so your projects stay on track.
               </p>
               <Link href="/services">
@@ -187,14 +187,14 @@ export default function HomePage() {
       {/* SERVICE AREAS */}
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">Serving Brooklyn, Rockaways & South Queens</h2>
-          <p className="text-lg text-gray-600 mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Serving Brooklyn, Rockaways & South Queens</h2>
+          <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
             We provide fast, reliable junk removal across all nearby neighborhoods — often with same-day availability.
           </p>
           
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6">Primary Service Areas</h3>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <div className="mb-8 sm:mb-12">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Primary Service Areas</h3>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
               {['Flatbush', 'Midwood', 'Sheepshead Bay', 'Marine Park'].map(area => (
                 <span key={area} className="bg-white px-6 py-2 rounded-full shadow">{area}</span>
               ))}
@@ -233,18 +233,18 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-orange-600 py-20 px-4 text-center text-white">
-        <h2 className="text-4xl font-bold mb-8">Ready to Get Rid of Your Junk?</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-4">
-          <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
-            <button className="bg-white text-orange-600 px-8 py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2">
-              <Phone size={24} />
+      <section className="bg-orange-600 py-16 sm:py-20 px-4 text-center text-white">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">Ready to Get Rid of Your Junk?</h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-2xl mx-auto">
+          <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <button className="bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2 w-full text-sm sm:text-base">
+              <Phone size={20} />
               Call 877-JUNKY-JO
             </button>
           </a>
-          <Link href="/contact">
-            <button className="border-2 border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-orange-600 font-bold flex items-center justify-center gap-2">
-              <ClipboardList size={24} />
+          <Link href="/contact" className="w-full sm:w-auto">
+            <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-white hover:text-orange-600 font-bold flex items-center justify-center gap-2 w-full text-sm sm:text-base">
+              <ClipboardList size={20} />
               Get Free Estimate Today
             </button>
           </Link>

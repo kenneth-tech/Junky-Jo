@@ -16,13 +16,13 @@ export default function ServiceAreas() {
       <Header />
 
       {/* PAGE HEADER */}
-      <section className="bg-orange-600 text-white py-16 px-4">
+      <section className="bg-orange-600 text-white py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-4 mb-4">
-            <MapPin size={40} />
-            <h1 className="text-5xl font-bold">Our Service Areas</h1>
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <MapPin size={36} className="flex-shrink-0" />
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold">Our Service Areas</h1>
           </div>
-          <p className="text-xl">We proudly serve Brooklyn, the Rockaways, and South Queens.</p>
+          <p className="text-base sm:text-lg md:text-xl">We proudly serve Brooklyn, the Rockaways, and South Queens.</p>
         </div>
       </section>
 

@@ -35,7 +35,7 @@ export default function Header() {
 				{/* Mobile Menu Button */}
 				<button 
 						onClick={() => setIsOpen(!isOpen)}
-						className="md:hidden"
+						className="md:hidden text-white"
 					>
 						{isOpen ? <X size={24} /> : <Menu size={24} />}
 					</button>
@@ -50,7 +50,7 @@ export default function Header() {
 							<Link href="/service-areas" className="hover:text-orange-500" onClick={() => setIsOpen(false)}>Service Areas</Link>
 							<Link href="/about" className="hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
 							<Link href="/contact" className="hover:text-orange-500" onClick={() => setIsOpen(false)}>Contact</Link>
-							<a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
+						<a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer">
 								<button className="w-full bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700">
 									Call Now
 								</button>

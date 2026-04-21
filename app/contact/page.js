@@ -62,10 +62,10 @@ export default function Contact() {
       <Header />
 
       {/* PAGE HEADER */}
-      <section className="bg-orange-600 text-white py-16 px-4">
+      <section className="bg-orange-600 text-white py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4">Get Your Free Estimate</h1>
-          <p className="text-xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Get Your Free Estimate</h1>
+          <p className="text-base sm:text-lg md:text-xl">
             Ready to clear out your junk? Call us or fill out the form below and we'll get back to you.
           </p>
         </div>
