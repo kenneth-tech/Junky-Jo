@@ -68,7 +68,7 @@ export default function HomePage() {
 
       {/* TRUST STRIP */}
       <section className="bg-gray-50 py-8 sm:py-12 px-4">
-        <div className="max-w-2xl mx-auto grid grid-cols-2 gap-6 sm:gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <div className="flex items-start justify-center gap-3">
             <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
             <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Same-Day Service</span>
