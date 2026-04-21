@@ -3,6 +3,9 @@ import './globals.css'
 export const metadata = {
   title: '887Junky Jo - Brooklyn',
   description: 'Fast, same-day junk removal service in Brooklyn, Rockaways & South Queens. Call 877-JUNKY-JO today!',
+  icons: {
+    icon: '/images/LOGO.png',
+  },
 }
 
 export default function RootLayout({ children }) {

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { 
@@ -30,9 +31,16 @@ export default function HomePage() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center" style={{backgroundImage: 'url("/images/truck-hero.jpg")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', minHeight: '400px'}}>
+      <section className="py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center" style={{backgroundImage: 'url("/images/truck.png")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', minHeight: '400px'}}>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
+          <Image
+            src="/images/LOGO.png"
+            alt="887 Junky Jo Logo"
+            width={200}
+            height={200}
+            className="mx-auto mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
+          />
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Junk Removal in Brooklyn — Fast, Same-Day Service
           </h1>
