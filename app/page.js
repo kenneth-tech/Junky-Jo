@@ -42,7 +42,7 @@ export default function HomePage() {
           <p className="text-2xl font-bold mb-8">You point — we haul it.</p>
 
           <div className="flex flex-col md:flex-row justify-center gap-4 mb-8">
-            <a href="tel:8775865956">
+            <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-orange-600 px-8 py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2 text-lg">
                 <Phone size={24} />
                 Call 877-JUNKY-JO
@@ -228,7 +228,7 @@ export default function HomePage() {
       <section className="bg-orange-600 py-20 px-4 text-center text-white">
         <h2 className="text-4xl font-bold mb-8">Ready to Get Rid of Your Junk?</h2>
         <div className="flex flex-col md:flex-row justify-center gap-4">
-          <a href="tel:8775865956">
+          <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
             <button className="bg-white text-orange-600 px-8 py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2">
               <Phone size={24} />
               Call 877-JUNKY-JO

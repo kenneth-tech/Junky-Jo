@@ -96,7 +96,7 @@ export default function Services() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">Ready to Get Started?</h2>
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <a href="tel:8775865956">
+            <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
               <button className="bg-white text-orange-600 px-8 py-3 rounded-xl hover:bg-gray-100 font-bold">
                 Call 877-JUNKY-JO
               </button>

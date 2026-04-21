@@ -60,7 +60,7 @@ export default function ServiceAreas() {
             <p className="text-gray-600 text-lg mb-6">
               If you're in or near Brooklyn, chances are we serve your area. Give us a call to confirm availability — we often have same-day service options.
             </p>
-            <a href="tel:8775865956">
+            <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
               <button className="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700 flex items-center gap-2">
                 <Phone size={20} />
                 Call Us at 877-JUNKY-JO

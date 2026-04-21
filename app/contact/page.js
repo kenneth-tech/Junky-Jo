@@ -157,7 +157,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Phone</p>
-                  <a href="tel:8775865956" className="text-2xl font-bold text-orange-600 hover:underline">
+                  <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-orange-600 hover:underline">
                     877-JUNKY-JO
                   </a>
                 </div>

@@ -26,7 +26,7 @@ export default function Header() {
 					</nav>
 
 					{/* CTA */}
-					<a href="tel:8775865956" className="hidden md:block">
+					<a href="https://wa.me/18775865956" className="hidden md:block" target="_blank" rel="noopener noreferreren md:block" target="_blank" rel="noopener noreferrer">
 						<button className="bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700">
 							Call Now
 						</button>
@@ -50,7 +50,7 @@ export default function Header() {
 							<Link href="/service-areas" className="hover:text-orange-500" onClick={() => setIsOpen(false)}>Service Areas</Link>
 							<Link href="/about" className="hover:text-orange-500" onClick={() => setIsOpen(false)}>About</Link>
 							<Link href="/contact" className="hover:text-orange-500" onClick={() => setIsOpen(false)}>Contact</Link>
-							<a href="tel:8775865956">
+							<a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer">
 								<button className="w-full bg-orange-600 text-white px-4 py-2 rounded-xl hover:bg-orange-700">
 									Call Now
 								</button>
