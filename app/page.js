@@ -36,7 +36,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-4xl mx-auto">
           <Image
             src="/images/LOGO.png"
-            alt="887 Junky Jo Logo"
+            alt="877Junky Jo Logo"
             width={200}
             height={200}
             className="mx-auto mb-3 sm:mb-4 md:mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"

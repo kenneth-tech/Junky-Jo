@@ -37,7 +37,7 @@ export async function POST(request) {
       const resend = new Resend(process.env.RESEND_API_KEY)
       
       const emailResponse = await resend.emails.send({
-        from: '887Junky Jo <onboarding@resend.dev>',
+        from: '877Junky Jo <onboarding@resend.dev>',
         to: 'jojo@877junkyjo.com',
         subject: `New Lead Submission from ${formData.name}`,
         html: `

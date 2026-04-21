@@ -2,7 +2,7 @@ import './globals.css'
 import LoadingScreen from './components/LoadingScreen'
 
 export const metadata = {
-  title: '887Junky Jo - Brooklyn',
+  title: '877Junky Jo - Brooklyn',
   description: 'Fast, same-day junk removal service in Brooklyn, Rockaways & South Queens. Call 877-JUNKY-JO today!',
   icons: {
     icon: '/images/LOGO.png',
