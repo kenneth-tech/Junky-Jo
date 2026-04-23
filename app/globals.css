@@ -54,3 +54,36 @@ body {
 .animate-pulse-glow {
   animation: pulse-glow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDownFadeIn {
+  animation: slideDownFadeIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes menuItemSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.menu-item-0 { animation: menuItemSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards; opacity: 0; }
+.menu-item-1 { animation: menuItemSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s forwards; opacity: 0; }
+.menu-item-2 { animation: menuItemSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards; opacity: 0; }
+.menu-item-3 { animation: menuItemSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s forwards; opacity: 0; }
+.menu-item-4 { animation: menuItemSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards; opacity: 0; }
+.menu-item-cta { animation: menuItemSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards; opacity: 0; }
