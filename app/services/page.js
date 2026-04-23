@@ -20,68 +20,76 @@ export default function Services() {
 
       {/* SERVICES */}
       <section className="py-16 sm:py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Service 1 */}
-          <div className="mb-12 sm:mb-16">
-            <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Truck className="text-orange-600" size={28} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16 items-center">
+            <div className="order-2 md:order-1 flex flex-col justify-center">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Truck className="text-orange-600" size={28} />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold">Junk Removal</h2>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Junk Removal</h2>
+              <p className="text-gray-600 text-base sm:text-lg">
+                We remove unwanted items from homes, apartments, and properties — quickly and efficiently. Whether you're decluttering or preparing for a move, we handle it all with care.
+              </p>
             </div>
-            <p className="text-gray-600 text-base sm:text-lg mb-6">
-              We remove unwanted items from homes, apartments, and properties — quickly and efficiently. Whether you're decluttering or preparing for a move, we handle it all with care.
-            </p>
-            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
+            <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
               <img src="/images/junk-home.jpg" alt="Junk removal service" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
           {/* Service 2 */}
-          <div className="mb-12 sm:mb-16">
-            <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Hammer className="text-green-600" size={28} />
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Demo & Cleanup</h2>
-            </div>
-            <p className="text-gray-600 text-base sm:text-lg mb-6">
-              Light demolition and full cleanup services for renovations, remodeling, and tear-outs. We handle debris removal and site cleanup to get your project back on track.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16 items-center">
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
               <img src="/images/demo.jpg" alt="Demo and cleanup service" className="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Hammer className="text-green-600" size={28} />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold">Demo & Cleanup</h2>
+              </div>
+              <p className="text-gray-600 text-base sm:text-lg">
+                Light demolition and full cleanup services for renovations, remodeling, and tear-outs. We handle debris removal and site cleanup to get your project back on track.
+              </p>
             </div>
           </div>
 
           {/* Service 3 */}
-          <div className="mb-12 sm:mb-16">
-            <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Wrench className="text-yellow-600" size={28} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16 items-center">
+            <div className="order-2 md:order-1 flex flex-col justify-center">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Wrench className="text-yellow-600" size={28} />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold">Construction Debris</h2>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Construction Debris</h2>
+              <p className="text-gray-600 text-base sm:text-lg">
+                We haul away wood, drywall, scrap, and other materials so your job site stays clean and safe. Perfect for contractors and property managers.
+              </p>
             </div>
-            <p className="text-gray-600 text-base sm:text-lg mb-6">
-              We haul away wood, drywall, scrap, and other materials so your job site stays clean and safe. Perfect for contractors and property managers.
-            </p>
-            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
+            <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
               <img src="/images/contractors.jpg" alt="Construction debris removal" className="w-full h-full object-cover rounded-lg" />
             </div>
           </div>
 
           {/* Service 4 */}
-          <div>
-            <div className="flex items-center gap-3 sm:gap-4 mb-4">
-              <div className="w-14 sm:w-16 h-14 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                <Home className="text-purple-600" size={28} />
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">Estate Cleanouts</h2>
-            </div>
-            <p className="text-gray-600 text-base sm:text-lg mb-6">
-              Complete cleanout services for homes, estates, and properties — handled with care and respect. We understand the sensitivity of estate situations and work with compassion.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
               <img src="/images/estate.jpg" alt="Estate cleanout service" className="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div className="flex flex-col justify-center">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                <div className="w-14 sm:w-16 h-14 sm:h-16 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Home className="text-purple-600" size={28} />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold">Estate Cleanouts</h2>
+              </div>
+              <p className="text-gray-600 text-base sm:text-lg">
+                Complete cleanout services for homes, estates, and properties — handled with care and respect. We understand the sensitivity of estate situations and work with compassion.
+              </p>
             </div>
           </div>
         </div>
