@@ -2,7 +2,7 @@
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { Users, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 
 export default function About() {
   return (
@@ -22,7 +22,7 @@ export default function About() {
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Users className="text-orange-600" size={32} />
+                <img src="/images/LOGO.png" alt="877JUNKY JO Logo" className="w-12 h-12 object-contain" />
               </div>
               <h2 className="text-3xl font-bold">About 877Junky Jo</h2>
             </div>
