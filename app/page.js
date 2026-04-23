@@ -122,7 +122,7 @@ export default function HomePage() {
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">What We Remove</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               { icon: Sofa, label: 'Furniture removal' },
               { icon: Refrigerator, label: 'Appliances' },
