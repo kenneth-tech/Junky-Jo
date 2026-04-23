@@ -13,9 +13,8 @@ export default function Header() {
 			<header className="sticky top-0 bg-black shadow z-50">
 				<div className="max-w-6xl mx-auto flex justify-between items-center p-4">
 				<Link href="/" className="text-2xl font-bold text-orange-500">
-					877Junky Jo
-				</Link>
-
+				877JUNKY JO
+			</Link>
 				{/* Desktop Menu */}
 				<nav className="hidden md:flex gap-6 text-sm text-white">
 					<Link href="/" className="hover:text-orange-500">Home</Link>
