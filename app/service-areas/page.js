@@ -45,7 +45,7 @@ export default function ServiceAreas() {
 
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8">Extended Service Areas</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {extendedAreas.map(area => (
                 <div key={area} className="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
                   <MapPin className="text-gray-600" size={20} />
