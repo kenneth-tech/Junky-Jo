@@ -33,7 +33,7 @@ export default function ServiceAreas() {
             <h2 className="text-3xl font-bold mb-8">Primary Service Areas</h2>
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               {primaryAreas.map(area => (
-                <div key={area} className="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-600">
+                <div key={area} className="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-600 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-orange-100 cursor-pointer">
                   <div className="flex items-center gap-3">
                     <MapPin className="text-orange-600" size={24} />
                     <span className="text-lg font-semibold">{area}</span>
@@ -47,7 +47,7 @@ export default function ServiceAreas() {
             <h2 className="text-3xl font-bold mb-8">Extended Service Areas</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {extendedAreas.map(area => (
-                <div key={area} className="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
+                <div key={area} className="bg-gray-50 p-4 rounded-lg flex items-center gap-3 transition-all duration-300 hover:shadow-md hover:scale-105 hover:bg-orange-50 cursor-pointer">
                   <MapPin className="text-gray-600" size={20} />
                   <span className="font-medium">{area}</span>
                 </div>

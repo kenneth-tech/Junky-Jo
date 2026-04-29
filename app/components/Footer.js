@@ -38,7 +38,7 @@ export default function Footer() {
                 href="https://facebook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-orange-500 transition"
+                className="text-gray-400 hover:text-orange-500 transition transform hover:scale-125 duration-200"
                 title="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@ export default function Footer() {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-orange-500 transition"
+                className="text-gray-400 hover:text-orange-500 transition transform hover:scale-125 duration-200"
                 title="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@ export default function Footer() {
                   href="https://facebook.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-orange-500 transition"
+                  className="text-gray-400 hover:text-orange-500 transition transform hover:scale-125 duration-200"
                   title="Facebook"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ export default function Footer() {
                   href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-orange-500 transition"
+                  className="text-gray-400 hover:text-orange-500 transition transform hover:scale-125 duration-200"
                   title="Instagram"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

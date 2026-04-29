@@ -161,13 +161,13 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/junk-home.jpg" alt="Home junk removal service" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/Junkremoval.jpeg" alt="Home junk removal service" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-12 md:mt-16">
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/contractors.jpg" alt="Commercial junk removal truck" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/ConstructionDebris.jpeg" alt="Commercial junk removal truck" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
             </div>
             <div className="flex flex-col justify-center">
               <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Junk Removal for Businesses & Contractors</h3>
@@ -176,7 +176,7 @@ export default function HomePage() {
               </p>
               <Link href="/services">
                 <button className="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700 w-fit">
-                  Commercial Services
+                  Learn More
                 </button>
               </Link>
             </div>

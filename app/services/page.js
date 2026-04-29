@@ -35,14 +35,14 @@ export default function Services() {
               </p>
             </div>
             <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/junk-home.jpg" alt="Junk removal service" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/Junkremoval.jpeg" alt="Junk removal service" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
             </div>
           </div>
 
           {/* Service 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12 md:mb-16 items-center">
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/demo.jpg" alt="Demo and cleanup service" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/democleanup.jpeg" alt="Demo and cleanup service" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
             </div>
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4">
@@ -71,14 +71,14 @@ export default function Services() {
               </p>
             </div>
             <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/contractors.jpg" alt="Construction debris removal" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/ConstructionDebris.jpeg" alt="Construction debris removal" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
             </div>
           </div>
 
           {/* Service 4 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/estate.jpg" alt="Estate cleanout service" className="w-full h-full object-cover rounded-lg" />
+              <img src="/images/Estate.jpeg" alt="Estate cleanout service" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
             </div>
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-3 sm:gap-4 mb-4">
