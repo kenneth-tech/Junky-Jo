@@ -31,7 +31,7 @@ export default function HomePage() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center min-h-screen sm:min-h-[600px] md:min-h-[700px] lg:min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/images/truck.png")', backgroundAttachment: 'fixed'}}>
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center min-h-screen sm:min-h-[600px] md:min-h-[700px] lg:min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/images/before-after.png")', backgroundAttachment: 'fixed'}}>
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Image
@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full">
             <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <button className="bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2 text-base sm:text-lg w-full">
+              <button className="bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-orange-600 font-bold flex items-center justify-center gap-2 text-base sm:text-lg w-full">
                 <Phone size={24} />
                 Call 877-JUNKY-JO
               </button>

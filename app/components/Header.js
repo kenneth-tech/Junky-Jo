@@ -24,13 +24,52 @@ export default function Header() {
 					<Link href="/contact" className="hover:text-orange-500">Contact</Link>
 				</nav>
 
-				{/* CTA */}
-				<a href="https://wa.me/18775865956" className="hidden md:block" target="_blank" rel="noopener noreferrer">
-					<button className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 animate-pulse-glow">
-						<Phone size={18} className="animate-bounce" />
-						Call Now
-					</button>
-				</a>
+				{/* Social + CTA */}
+				<div className="hidden md:flex items-center gap-3">
+					{/* Facebook */}
+					<a
+						href="https://www.facebook.com/877junkyjo/"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Facebook"
+						className="transition transform hover:scale-125 duration-200 opacity-90 hover:opacity-100"
+					>
+						<svg className="w-7 h-7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+						</svg>
+					</a>
+					{/* Instagram */}
+					<a
+						href="https://www.instagram.com/junkyjoremoval/"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Instagram"
+						className="transition transform hover:scale-125 duration-200 opacity-90 hover:opacity-100"
+					>
+						<svg className="w-7 h-7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<defs>
+								<radialGradient id="ig-gradient" cx="30%" cy="107%" r="150%">
+									<stop offset="0%" stopColor="#fdf497"/>
+									<stop offset="5%" stopColor="#fdf497"/>
+									<stop offset="45%" stopColor="#fd5949"/>
+									<stop offset="60%" stopColor="#d6249f"/>
+									<stop offset="90%" stopColor="#285AEB"/>
+								</radialGradient>
+							</defs>
+							<rect x="2.15" y="2.15" width="19.7" height="19.7" rx="4.8" ry="4.8" fill="url(#ig-gradient)"/>
+							<rect x="2.15" y="2.15" width="19.7" height="19.7" rx="4.8" ry="4.8" fill="none" stroke="white" strokeWidth="0"/>
+							<circle cx="12.063" cy="11.845" r="3.6" fill="none" stroke="white" strokeWidth="1.6"/>
+							<circle cx="17.663" cy="6.465" r="1.44" fill="white"/>
+							<rect x="2.15" y="2.15" width="19.7" height="19.7" rx="4.8" ry="4.8" fill="none" stroke="white" strokeWidth="1.48"/>
+						</svg>
+					</a>
+					<a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer">
+						<button className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-110 animate-pulse-glow">
+							<Phone size={18} className="animate-bounce" />
+							Call Now
+						</button>
+					</a>
+				</div>
 
 				{/* Mobile Menu Button */}
 				<button 
@@ -76,6 +115,32 @@ export default function Header() {
 							</Link>
 						</div>
 						<div className="border-t border-orange-600/30 my-3"></div>
+						{/* Social Icons */}
+						<div className="flex gap-5 px-4 pb-3">
+							<a href="https://www.facebook.com/877junkyjo/" target="_blank" rel="noopener noreferrer" title="Facebook" className="transition transform hover:scale-125 duration-200 opacity-90 hover:opacity-100">
+								<svg className="w-7 h-7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+								</svg>
+							</a>
+							<a href="https://www.instagram.com/junkyjoremoval/" target="_blank" rel="noopener noreferrer" title="Instagram" className="transition transform hover:scale-125 duration-200 opacity-90 hover:opacity-100">
+								<svg className="w-7 h-7" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									<defs>
+										<radialGradient id="ig-mobile-gradient" cx="30%" cy="107%" r="150%">
+											<stop offset="0%" stopColor="#fdf497"/>
+											<stop offset="5%" stopColor="#fdf497"/>
+											<stop offset="45%" stopColor="#fd5949"/>
+											<stop offset="60%" stopColor="#d6249f"/>
+											<stop offset="90%" stopColor="#285AEB"/>
+										</radialGradient>
+									</defs>
+									<rect x="2.15" y="2.15" width="19.7" height="19.7" rx="4.8" ry="4.8" fill="url(#ig-mobile-gradient)"/>
+									<circle cx="12.063" cy="11.845" r="3.6" fill="none" stroke="white" strokeWidth="1.6"/>
+									<circle cx="17.663" cy="6.465" r="1.44" fill="white"/>
+									<rect x="2.15" y="2.15" width="19.7" height="19.7" rx="4.8" ry="4.8" fill="none" stroke="white" strokeWidth="1.48"/>
+								</svg>
+							</a>
+						</div>
+						<div className="border-t border-orange-600/30 mb-3"></div>
 						<div className="menu-item-cta">
 							<a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="w-full">
 								<button className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 active:scale-95">
