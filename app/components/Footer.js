@@ -46,7 +46,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://www.instagram.com/junkyjoremoval/" 
+                href="https://www.instagram.com/877junkyjo/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-orange-500 transition transform hover:scale-125 duration-200"
@@ -111,7 +111,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a 
-                  href="https://www.instagram.com/junkyjoremoval/" 
+                  href="https://www.instagram.com/877junkyjo/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-orange-500 transition transform hover:scale-125 duration-200"
