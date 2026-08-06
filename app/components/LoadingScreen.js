@@ -6,25 +6,36 @@ export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Check if page has already loaded (skip loading screen on page navigation)
-    if (sessionStorage.getItem('pageLoaded')) {
-      setIsLoading(false)
-      return
-    }
-
     const handleLoadComplete = () => {
       setIsLoading(false)
-      sessionStorage.setItem('pageLoaded', 'true')
+
+      try {
+        sessionStorage.setItem('pageLoaded', 'true')
+      } catch {
+        // Storage can be unavailable in some browser privacy modes.
+      }
+    }
+
+    try {
+      if (sessionStorage.getItem('pageLoaded')) {
+        const skipTimer = setTimeout(handleLoadComplete, 0)
+        return () => clearTimeout(skipTimer)
+      }
+    } catch {
+      const storageErrorTimer = setTimeout(handleLoadComplete, 0)
+      return () => clearTimeout(storageErrorTimer)
+    }
+
+    if (document.readyState === 'complete') {
+      const alreadyLoadedTimer = setTimeout(handleLoadComplete, 0)
+      return () => clearTimeout(alreadyLoadedTimer)
     }
 
     // Hide loader when page is fully loaded
     window.addEventListener('load', handleLoadComplete)
     
     // Also hide after 2 seconds as fallback
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-      sessionStorage.setItem('pageLoaded', 'true')
-    }, 2000)
+    const timer = setTimeout(handleLoadComplete, 2000)
 
     return () => {
       window.removeEventListener('load', handleLoadComplete)

@@ -1,10 +1,77 @@
 import { createClient } from '@supabase/supabase-js'
 import { Resend } from 'resend'
+import contactSecurity from '@/lib/contactSecurity.cjs'
+
+const {
+  CONTACT_FORM_MAX_BYTES,
+  buildContactEmailHtml,
+  checkContactRateLimit,
+  getClientIdentifier,
+  readJsonWithinLimit,
+  validateContactPayload,
+} = contactSecurity
 
 export async function POST(request) {
   try {
-    const formData = await request.json()
-    
+    const contentType = request.headers.get('content-type') || ''
+    const contentLength = Number(request.headers.get('content-length') || 0)
+
+    if (!contentType.toLowerCase().includes('application/json')) {
+      return Response.json(
+        { success: false, error: 'Invalid request.' },
+        { status: 415 }
+      )
+    }
+
+    if (contentLength > CONTACT_FORM_MAX_BYTES) {
+      return Response.json(
+        { success: false, error: 'Request is too large.' },
+        { status: 413 }
+      )
+    }
+
+    const rateLimit = checkContactRateLimit(getClientIdentifier(request.headers))
+
+    if (!rateLimit.allowed) {
+      return Response.json(
+        { success: false, error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+
+    const bodyResult = await readJsonWithinLimit(request, CONTACT_FORM_MAX_BYTES)
+
+    if (!bodyResult.ok) {
+      return Response.json(
+        { success: false, error: bodyResult.error },
+        { status: bodyResult.status }
+      )
+    }
+
+    const formData = bodyResult.data
+    const validation = validateContactPayload(formData)
+
+    if (!validation.ok) {
+      return Response.json(
+        { success: false, error: validation.error },
+        { status: validation.status }
+      )
+    }
+
+    if (validation.honeypot) {
+      return Response.json({ success: true })
+    }
+
+    const contact = validation.contact
+
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      console.error('Missing Supabase contact form environment variables')
+      return Response.json(
+        { success: false, error: 'Failed to submit form' },
+        { status: 500 }
+      )
+    }
+
     // Use service role key to bypass RLS for form submissions
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -15,10 +82,10 @@ export async function POST(request) {
       .from('contacts')
       .insert([
         {
-          name: formData.name,
-          phone: formData.phone,
-          location: formData.location,
-          description: formData.description,
+          name: contact.name,
+          phone: contact.phone,
+          location: contact.location,
+          description: contact.description,
           created_at: new Date().toISOString(),
         },
       ])
@@ -27,44 +94,36 @@ export async function POST(request) {
     if (error) {
       console.error('Supabase error:', error)
       return Response.json(
-        { success: false, error: error.message },
-        { status: 400 }
+        { success: false, error: 'Failed to submit form' },
+        { status: 500 }
       )
     }
 
     // Send email notification
-    try {
-      const resend = new Resend(process.env.RESEND_API_KEY)
-      
-      const emailResponse = await resend.emails.send({
-        from: '877Junky Jo <onboarding@resend.dev>',
-        to: 'jojo@877junkyjo.com',
-        subject: `New Lead Submission from ${formData.name}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #ff6b35;">New Contact Form Submission</h2>
-            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <p><strong>Name:</strong> ${formData.name}</p>
-              <p><strong>Phone:</strong> ${formData.phone}</p>
-              <p><strong>Location:</strong> ${formData.location}</p>
-              <p><strong>Description:</strong></p>
-              <p style="background-color: white; padding: 10px; border-radius: 4px;">${formData.description.replace(/\n/g, '<br>')}</p>
-              <p style="font-size: 12px; color: #666; margin-top: 20px;">Submitted on: ${new Date().toLocaleString()}</p>
-            </div>
-          </div>
-        `
-      })
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY)
 
-      if (emailResponse.error) {
-        console.error('Email sending error:', emailResponse.error)
+        const emailResponse = await resend.emails.send({
+          from: '877Junky Jo <onboarding@resend.dev>',
+          to: 'jojo@877junkyjo.com',
+          subject: `New Lead Submission from ${contact.name}`,
+          html: buildContactEmailHtml(contact),
+        })
+
+        if (emailResponse.error) {
+          console.error('Email sending error:', emailResponse.error)
+          // Don't fail the form submission if email fails
+        }
+      } catch (emailErr) {
+        console.error('Email error:', emailErr)
         // Don't fail the form submission if email fails
       }
-    } catch (emailErr) {
-      console.error('Email error:', emailErr)
-      // Don't fail the form submission if email fails
+    } else {
+      console.error('Missing RESEND_API_KEY; contact saved without email notification')
     }
 
-    return Response.json({ success: true, data })
+    return Response.json({ success: true })
   } catch (err) {
     console.error('API error:', err)
     return Response.json(

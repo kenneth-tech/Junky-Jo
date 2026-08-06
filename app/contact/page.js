@@ -10,7 +10,8 @@ export default function Contact() {
     name: '',
     phone: '',
     location: '',
-    description: ''
+    description: '',
+    company: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -42,7 +43,7 @@ export default function Contact() {
 
       if (result.success) {
         setSubmitted(true)
-        setFormData({ name: '', phone: '', location: '', description: '' })
+        setFormData({ name: '', phone: '', location: '', description: '', company: '' })
         setTimeout(() => {
           setSubmitted(false)
         }, 3000)
@@ -63,10 +64,10 @@ export default function Contact() {
 
       {/* PAGE HEADER */}
       <section className="bg-orange-600 text-white py-12 sm:py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto max-w-6xl text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Get Your Free Estimate</h1>
-          <p className="text-base sm:text-lg md:text-xl">
-            Ready to clear out your junk? Call us or fill out the form below and we'll get back to you.
+          <p className="mx-auto max-w-4xl text-base sm:text-lg md:text-xl">
+            Ready to clear out your junk? Call us or fill out the form below and we&apos;ll get back to you.
           </p>
         </div>
       </section>
@@ -79,7 +80,7 @@ export default function Contact() {
             <h2 className="text-3xl font-bold mb-8">Contact Form</h2>
             {submitted && (
               <div className="bg-green-50 text-green-700 p-4 rounded-lg mb-6 border border-green-200">
-                Thank you! We'll contact you soon with your free estimate.
+                Thank you! We&apos;ll contact you soon with your free estimate.
               </div>
             )}
             {error && (
@@ -88,6 +89,18 @@ export default function Contact() {
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
               <div>
                 <label className="block font-semibold mb-2">Name *</label>
                 <input
@@ -96,6 +109,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  maxLength="80"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
                   placeholder="Your Name"
                 />
@@ -108,6 +122,7 @@ export default function Contact() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
+                  maxLength="30"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                   placeholder="(555) 123-4567"
                 />
@@ -120,6 +135,7 @@ export default function Contact() {
                   value={formData.location}
                   onChange={handleChange}
                   required
+                  maxLength="120"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                   placeholder="e.g., Flatbush, 11226"
                 />
@@ -132,6 +148,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows="5"
+                  maxLength="1000"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500"
                   placeholder="Tell us what you need removed..."
                 />
@@ -157,7 +174,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Phone</p>
-                  <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer18775865956" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-orange-600 hover:underline">
+                  <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-orange-600 hover:underline">
                     877-JUNKY-JO
                   </a>
                 </div>
@@ -177,7 +194,7 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
-              <p className="text-gray-600">We'll respond within 1 hour</p>
+              <p className="text-gray-600">We&apos;ll respond within 1 hour</p>
             </div>
 
             <div className="bg-gray-50 p-8 rounded-lg">

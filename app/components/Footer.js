@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12 sm:py-16">
@@ -14,10 +16,10 @@ export default function Footer() {
           <div className="text-left">
             <h4 className="font-bold mb-3 text-xs sm:text-sm">Quick Links</h4>
             <div className="flex flex-col gap-2 text-gray-400">
-              <a href="/" className="hover:text-white text-xs sm:text-sm transition">Home</a>
-              <a href="/services" className="hover:text-white text-xs sm:text-sm transition">Services</a>
-              <a href="/service-areas" className="hover:text-white text-xs sm:text-sm transition">Areas</a>
-              <a href="/about" className="hover:text-white text-xs sm:text-sm transition">About</a>
+              <Link href="/" className="hover:text-white text-xs sm:text-sm transition">Home</Link>
+              <Link href="/services" className="hover:text-white text-xs sm:text-sm transition">Services</Link>
+              <Link href="/service-areas" className="hover:text-white text-xs sm:text-sm transition">Areas</Link>
+              <Link href="/about" className="hover:text-white text-xs sm:text-sm transition">About</Link>
             </div>
           </div>
 
@@ -84,10 +86,10 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="text-center">
             <div className="flex gap-4 text-gray-400 justify-center">
-              <a href="/" className="hover:text-white text-xs sm:text-sm">Home</a>
-              <a href="/services" className="hover:text-white text-xs sm:text-sm">Services</a>
-              <a href="/service-areas" className="hover:text-white text-xs sm:text-sm">Areas</a>
-              <a href="/about" className="hover:text-white text-xs sm:text-sm">About</a>
+              <Link href="/" className="hover:text-white text-xs sm:text-sm">Home</Link>
+              <Link href="/services" className="hover:text-white text-xs sm:text-sm">Services</Link>
+              <Link href="/service-areas" className="hover:text-white text-xs sm:text-sm">Areas</Link>
+              <Link href="/about" className="hover:text-white text-xs sm:text-sm">About</Link>
             </div>
           </div>
 

@@ -1,253 +1,539 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { 
-  Phone, 
-  ClipboardList, 
-  Truck, 
-  Sofa, 
-  Refrigerator, 
-  Hammer, 
-  Package,
+import {
+  ArrowRight,
   Building,
-  Home,
-  Zap,
-  Leaf,
+  CalendarDays,
+  CheckCircle,
+  ClipboardList,
   Clock,
-  Users,
-  Recycle,
-  CheckCircle
+  Hammer,
+  Home,
+  Leaf,
+  MapPin,
+  Package,
+  Phone,
+  Refrigerator,
+  Sofa,
+  Star,
+  Truck,
 } from 'lucide-react'
 
-export default function HomePage() {
-  const [showEstimate, setShowEstimate] = useState(false)
+const callHref = 'https://wa.me/18775865956'
 
+const trustItems = [
+  'Same-Day Service',
+  'Locally Owned',
+  'No Hidden Fees',
+  'Heavy Lifting Included',
+]
+
+const services = [
+  { icon: Sofa, label: 'Furniture removal' },
+  { icon: Refrigerator, label: 'Appliances' },
+  { icon: Hammer, label: 'Construction debris' },
+  { icon: Home, label: 'Basement cleanouts' },
+  { icon: Building, label: 'Garage cleanouts' },
+  { icon: Leaf, label: 'Yard waste' },
+  { icon: Package, label: 'Estate cleanouts' },
+  { icon: Truck, label: 'General junk removal' },
+]
+
+const steps = [
+  {
+    icon: Phone,
+    title: 'Call first',
+    detail: 'Tell us what needs to go and where the job is located.',
+  },
+  {
+    icon: ClipboardList,
+    title: 'Get the price',
+    detail: 'We review the load, access, timing, and give clear pricing.',
+  },
+  {
+    icon: Truck,
+    title: 'We haul it',
+    detail: 'The crew loads, removes, and sweeps up the work area.',
+  },
+]
+
+const mobileHeroMedia = [
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-25 at 12.14.49 AM.jpeg',
+    alt: '877Junky Jo team work photo',
+    className: 'col-span-2',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/July 20, 2026 jj.mp4',
+    alt: '877Junky Jo hauling job video',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-26 at 10.35.40 AM.jpeg',
+    alt: 'Brooklyn junk cleanout work',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-20 at 11.17.02 (1).jpeg',
+    alt: '877Junky Jo service work graphic',
+    className: 'col-span-2',
+  },
+]
+
+const heroMedia = [
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/July 20, 2026 jj.mp4',
+    alt: '877Junky Jo hauling job video',
+    className: 'col-span-2 row-span-2 lg:col-span-2',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-20 at 11.17.02 (1).jpeg',
+    alt: '877Junky Jo service work graphic',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-20 at 11.22.59.jpeg',
+    alt: 'Junk removal team work photo',
+    className: 'row-span-2',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/July 3, 2026 JJ.mp4',
+    alt: 'Junk removal job video preview',
+    className: 'row-span-2',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-28 at 10.43.41 PM.jpeg',
+    alt: 'Outdoor cleanout work photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-28 at 10.43.43 PM (1).jpeg',
+    alt: 'Debris removal work photo',
+    className: '',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/June 19, 2026 jj.mp4',
+    alt: 'Brooklyn cleanout video preview',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-28 at 10.43.43 PM (2).jpeg',
+    alt: 'Property cleanout work photo',
+    className: 'col-span-2',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-28 at 10.46.06 PM.jpeg',
+    alt: 'Junk removal service photo',
+    className: '',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/May 1, 2026 JJ.mp4',
+    alt: '877Junky Jo work video preview',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-28 at 10.46.12 PM.jpeg',
+    alt: 'Cleanout job photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-12 at 10.08.27 PM.jpeg',
+    alt: '877Junky Jo job site photo',
+    className: 'row-span-2',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/May 22, 2026 JJ.mp4',
+    alt: 'Hauling job video preview',
+    className: 'row-span-2',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-18 at 10.31.11 AM.jpeg',
+    alt: 'Hauling work photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-18 at 10.31.49 AM.jpeg',
+    alt: 'Outdoor debris removal job',
+    className: '',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/May 8, 2026 jj.mp4',
+    alt: 'Short junk removal job video',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-18 at 10.34.36 AM.jpeg',
+    alt: 'Local junk removal work photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-25 at 12.14.49 AM.jpeg',
+    alt: 'Junk removal team work photo',
+    className: 'col-span-2 row-span-2',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-25 at 12.19.19 AM (2).jpeg',
+    alt: '877Junky Jo crew work photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-25 at 12.19.20 AM.jpeg',
+    alt: 'Junk hauling work photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-26 at 10.35.19 AM (1).jpeg',
+    alt: 'Brooklyn junk removal work photo',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-26 at 10.35.40 AM.jpeg',
+    alt: 'Brooklyn junk cleanout work',
+    className: 'col-span-2',
+  },
+]
+
+const workProof = [
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-26 at 10.35.40 AM.jpeg',
+    alt: 'Junk removal cleanout work in Brooklyn',
+    className: 'sm:col-span-2 lg:row-span-2',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-25 at 12.14.49 AM.jpeg',
+    alt: '877Junky Jo crew work photo',
+    className: '',
+  },
+  {
+    type: 'video',
+    src: '/images/Photos and Videos/May 8, 2026 jj.mp4',
+    alt: 'Short hauling job video preview',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-04-20 at 11.17.02 (1).jpeg',
+    alt: 'Junk removal service graphic',
+    className: '',
+  },
+  {
+    type: 'photo',
+    src: '/images/Photos and Videos/WhatsApp Image 2026-05-18 at 10.31.49 AM.jpeg',
+    alt: 'Outdoor debris removal job',
+    className: '',
+  },
+]
+
+const areas = ['Brooklyn', 'Flatbush', 'Midwood', 'Sheepshead Bay', 'Marine Park', 'Rockaways', 'South Queens']
+
+const reviews = [
+  'Fast, reliable, and super easy to work with.',
+  'They showed up same day and cleared everything.',
+  'Professional crew and they left the place clean.',
+]
+
+export default function HomePage() {
   return (
-    <main className="font-sans">
+    <main className="font-sans bg-white text-slate-950">
       <Header />
 
-      {/* HERO SECTION */}
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 text-center text-white relative overflow-hidden flex items-center justify-center min-h-screen sm:min-h-[600px] md:min-h-[700px] lg:min-h-screen bg-cover bg-center bg-no-repeat" style={{backgroundImage: 'url("/images/before-after.png")', backgroundAttachment: 'fixed'}}>
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        <div className="relative z-10 max-w-4xl mx-auto">
+      <section
+        className="relative flex min-h-[680px] items-center justify-center overflow-hidden bg-slate-950 px-4 py-10 text-center text-white sm:min-h-[600px] sm:py-16 md:min-h-[700px] md:py-20 lg:min-h-screen lg:py-24"
+      >
+        <div className="absolute inset-0 grid grid-rows-2 grid-cols-2 gap-1 opacity-85 sm:hidden">
+          {mobileHeroMedia.map((item) => (
+            <div key={item.src} className={`relative min-h-0 overflow-hidden bg-slate-900 ${item.className}`}>
+              {item.type === 'video' ? (
+                <video
+                  src={item.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                  aria-label={item.alt}
+                />
+              ) : (
+                <img src={item.src} alt={item.alt} className="h-full w-full object-cover" />
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 hidden auto-rows-fr grid-cols-3 gap-1 opacity-85 sm:grid lg:grid-cols-6">
+          {heroMedia.map((item) => (
+            <div key={item.src} className={`relative min-h-0 overflow-hidden bg-slate-900 ${item.className}`}>
+              {item.type === 'video' ? (
+                <video
+                  src={item.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                  aria-label={item.alt}
+                />
+              ) : (
+                <img src={item.src} alt={item.alt} className="h-full w-full object-cover" />
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/70" />
+
+        <div className="relative z-10 mx-auto max-w-4xl">
           <Image
             src="/images/LOGO.png"
             alt="877Junky Jo Logo"
             width={200}
             height={200}
-            className="mx-auto mb-3 sm:mb-4 md:mb-6 transition duration-300 hover:scale-110 hover:drop-shadow-lg cursor-pointer"
+            priority
+            className="mx-auto mb-3 transition duration-300 hover:scale-110 hover:drop-shadow-lg sm:mb-4 md:mb-6"
           />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
-            Junk Removal in Brooklyn — Fast, Same-Day Service
+          <h1 className="mb-3 text-3xl font-bold leading-tight sm:mb-4 sm:text-4xl md:text-5xl lg:text-6xl">
+            Junk Removal in Brooklyn Fast, Same-Day Service
           </h1>
-          <p className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
+          <p className="mb-3 text-sm sm:mb-4 sm:text-base md:text-lg">
             We remove junk, debris, and clutter from your home or job site.
           </p>
-          <p className="text-lg sm:text-xl md:text-2xl font-bold mb-6 sm:mb-8">You point — we haul it.</p>
+          <p className="mb-6 text-lg font-bold sm:mb-8 sm:text-xl md:text-2xl">
+            You point, we haul it.
+          </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 w-full">
-            <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <button className="bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-orange-600 font-bold flex items-center justify-center gap-2 text-base sm:text-lg w-full">
-                <Phone size={24} />
-                Call 877-JUNKY-JO
-              </button>
+          <div className="flex w-full flex-row justify-center gap-2 sm:gap-4">
+            <a
+              href={callHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-orange-500 px-2 py-3 text-xs font-bold text-white transition hover:bg-orange-600 min-[380px]:px-3 min-[380px]:text-sm sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-lg"
+            >
+              <Phone size={24} className="h-4 w-4 shrink-0 sm:h-6 sm:w-6" />
+              Call 877-JUNKY-JO
             </a>
-            <Link href="/contact" className="w-full sm:w-auto">
-              <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-white hover:text-orange-600 font-bold flex items-center justify-center gap-2 text-base sm:text-lg w-full">
-                <ClipboardList size={24} />
-                Get Free Estimate
-              </button>
+            <Link
+              href="/book"
+              className="flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-white px-2 py-3 text-xs font-bold text-white transition hover:bg-white hover:text-orange-600 min-[380px]:px-3 min-[380px]:text-sm sm:w-auto sm:flex-none sm:px-8 sm:py-4 sm:text-lg"
+            >
+              <ClipboardList size={24} className="h-4 w-4 shrink-0 sm:h-6 sm:w-6" />
+              Pre-Book a Job
             </Link>
           </div>
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="bg-gray-50 py-8 sm:py-12 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          <div className="flex items-start justify-center gap-3">
-            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Same-Day Service</span>
-          </div>
-          <div className="flex items-start justify-center gap-3">
-            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Locally Owned</span>
-          </div>
-          <div className="flex items-start justify-center gap-3">
-            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">No Hidden Fees</span>
-          </div>
-          <div className="flex items-start justify-center gap-3">
-            <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
-            <span className="font-semibold text-xs sm:text-sm md:text-base pt-0.5">Heavy Lifting Included</span>
+      <section className="bg-white px-4 py-6 md:py-8">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-5 md:flex md:flex-row md:items-center md:justify-between">
+          {trustItems.map((item) => (
+            <div key={item} className="flex items-center gap-2 md:gap-3">
+              <CheckCircle className="shrink-0 text-green-600" size={20} />
+              <span className="text-sm font-bold leading-tight text-slate-950 md:text-base">{item}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-gray-50 px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-16 text-center text-4xl font-bold">What We Remove</h2>
+
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            {services.map((service) => (
+              <Link
+                key={service.label}
+                href="/services"
+                className="flex min-h-32 flex-col items-center justify-center rounded-xl bg-white p-6 text-center shadow transition hover:-translate-y-1 hover:shadow-xl"
+              >
+                <service.icon size={40} className="mb-3 text-orange-600" />
+                <span className="font-medium text-slate-950">{service.label}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Junk removal in 3 simple steps</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mb-6 text-white">
-                <Phone size={48} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Call or Book</h3>
-              <p className="text-gray-600">Schedule your pickup. Same-day service available.</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mb-6 text-white">
-                <ClipboardList size={48} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">Get Free Estimate</h3>
-              <p className="text-gray-600">We arrive on-site and give you a clear, upfront price.</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mb-6 text-white">
-                <Truck size={48} />
-              </div>
-              <h3 className="text-2xl font-bold mb-3">We Haul It Away</h3>
-              <p className="text-gray-600">You point — we remove everything and clean up after.</p>
-            </div>
+      <section className="bg-white px-4 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="text-center md:text-left">
+            <p className="mb-2 flex items-center justify-center gap-2 text-sm font-black uppercase text-orange-600 md:justify-start">
+              <Clock size={18} />
+              Simple process
+            </p>
+            <h2 className="text-3xl font-black sm:text-4xl">Call, confirm, and clear the space.</h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              We keep the process direct so customers know what happens next. Call first for the fastest response, or send a pre-booking request when you want us to review the details.
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+            {steps.map((step, index) => (
+              <article key={step.title} className="relative flex items-start gap-4 overflow-hidden rounded-lg border border-slate-200 bg-white p-4 pl-5 text-left shadow-sm transition sm:block sm:bg-slate-50 sm:p-5 sm:pl-5 sm:shadow-none">
+                <div className="absolute inset-y-0 left-0 w-1 bg-orange-600 sm:hidden" />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-orange-600 text-white shadow-sm sm:mb-5 sm:h-12 sm:w-12 sm:rounded-md sm:shadow-none">
+                  <step.icon size={24} className="h-5 w-5 sm:h-6 sm:w-6" />
+                </div>
+                <div className="min-w-0 flex-1 sm:min-w-full">
+                  <span className="text-xs font-black text-orange-700 sm:text-sm">0{index + 1}</span>
+                  <h3 className="mt-0.5 text-lg font-black leading-tight sm:mt-1 sm:text-xl">{step.title}</h3>
+                  <p className="mt-1.5 text-sm leading-6 text-slate-600 sm:mt-2">{step.detail}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* SERVICES OVERVIEW */}
-      <section className="bg-gray-50 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">What We Remove</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { icon: Sofa, label: 'Furniture removal' },
-              { icon: Refrigerator, label: 'Appliances' },
-              { icon: Hammer, label: 'Construction debris' },
-              { icon: Home, label: 'Basement cleanouts' },
-              { icon: Building, label: 'Garage cleanouts' },
-              { icon: Leaf, label: 'Yard waste' },
-              { icon: Package, label: 'Estate cleanouts' },
-              { icon: Truck, label: 'General junk removal' }
-            ].map((service, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 flex flex-col items-center text-center cursor-pointer">
-                <service.icon size={40} className="text-orange-600 mb-3 transition-transform duration-300 group-hover:scale-110" />
-                <span className="font-medium">{service.label}</span>
+      <section className="bg-slate-950 px-4 py-16 text-white sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 flex flex-col justify-between gap-4 text-center md:flex-row md:items-end md:text-left">
+            <div>
+              <p className="mb-2 text-sm font-black uppercase text-orange-300">OUR WORK</p>
+              <h2 className="max-w-2xl text-3xl font-black sm:text-4xl">
+                A quick look at recent cleanouts, hauling jobs, and debris removal.
+              </h2>
+            </div>
+            <Link href="/about" className="inline-flex items-center justify-center gap-2 font-black text-orange-300 hover:text-orange-200 md:justify-start">
+              See the full collage
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+
+          <div className="grid auto-rows-[220px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {workProof.map((item) => (
+              <div key={item.src} className={`relative overflow-hidden rounded-lg border border-white/10 bg-slate-900 ${item.className}`}>
+                {item.type === 'video' ? (
+                  <video
+                    src={item.src}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-cover"
+                    aria-label={item.alt}
+                  />
+                ) : (
+                  <img src={item.src} alt={item.alt} className="h-full w-full object-cover" />
+                )}
+                {item.type === 'video' && (
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 to-transparent p-4">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-black text-slate-950">
+                      <CalendarDays size={14} />
+                      Video preview
+                    </span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* RESIDENTIAL & COMMERCIAL */}
-      <section className="py-16 sm:py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-            <div className="order-2 md:order-1 flex flex-col justify-center">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Home Junk Removal Made Easy</h3>
-              <p className="text-gray-600 text-base sm:text-lg mb-3">
-                From cluttered basements to full house cleanouts, we handle everything.
-              </p>
-              <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-6">
-                No lifting, no stress — just point and we'll take care of the rest.
-              </p>
-              <Link href="/services">
-                <button className="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700 w-fit text-sm sm:text-base">
-                  Learn More
-                </button>
-              </Link>
-            </div>
-            <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/Junkremoval.jpeg" alt="Home junk removal service" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
-            </div>
+      <section className="bg-white px-4 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+          <div className="text-center md:text-left">
+            <p className="mb-2 flex items-center justify-center gap-2 text-sm font-black uppercase text-orange-600 md:justify-start">
+              <MapPin size={18} />
+              Service coverage
+            </p>
+            <h2 className="text-3xl font-black sm:text-4xl">Serving Brooklyn, Rockaways, and South Queens.</h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Nearby neighborhoods can often get same-day or next-day service. Call first and we will confirm whether your address is inside the active route.
+            </p>
+            <Link href="/service-areas" className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-slate-950 px-5 py-3 font-black text-white transition hover:bg-slate-800 md:justify-start">
+              Check coverage map
+              <ArrowRight size={18} />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-12 md:mt-16">
-            <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
-              <img src="/images/ConstructionDebris.jpeg" alt="Commercial junk removal truck" className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105" />
-            </div>
-            <div className="flex flex-col justify-center">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Junk Removal for Businesses & Contractors</h3>
-              <p className="text-gray-600 text-base sm:text-lg mb-4 sm:mb-4">
-                We work with contractors, property managers, and business owners to remove debris quickly and efficiently — so your projects stay on track.
-              </p>
-              <Link href="/services">
-                <button className="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-orange-700 w-fit">
-                  Learn More
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICE AREAS */}
-      <section className="bg-gray-50 py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Serving Brooklyn, Rockaways & South Queens</h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12">
-            We provide fast, reliable junk removal across all nearby neighborhoods — often with same-day availability.
-          </p>
-          
-          <div className="mb-8 sm:mb-12">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Primary Service Areas</h3>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 sm:mb-8">
-              {['Flatbush', 'Midwood', 'Sheepshead Bay', 'Marine Park'].map(area => (
-                <span key={area} className="bg-white px-6 py-2 rounded-full shadow">{area}</span>
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 sm:p-4">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+              {areas.map((area) => (
+                <div key={area} className="flex min-h-12 items-center gap-2 rounded-md border border-orange-100 bg-white px-3 py-3 text-left text-xs font-black text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-md sm:min-h-14 sm:gap-3 sm:px-4 sm:py-4 sm:text-sm">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-orange-50 text-orange-600 sm:h-8 sm:w-8">
+                    <MapPin size={14} aria-hidden="true" />
+                  </span>
+                  <span className="min-w-0 leading-tight">{area}</span>
+                </div>
               ))}
             </div>
           </div>
-
-          <Link href="/service-areas">
-            <button className="bg-orange-600 text-white px-8 py-3 rounded-xl hover:bg-orange-700">
-              View All Service Areas
-            </button>
-          </Link>
         </div>
       </section>
 
-      {/* SOCIAL PROOF */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Trusted by Local Homeowners & Businesses</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "Fast, reliable, and super easy to work with.",
-              "They showed up same day and cleared everything.",
-              "Professional and left the place clean."
-            ].map((review, idx) => (
-              <div key={idx} className="bg-gray-50 p-8 rounded-lg shadow">
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
+      <section className="bg-slate-50 px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-10 text-center text-3xl font-black sm:text-4xl">
+            Trusted by local homeowners, contractors, and businesses.
+          </h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {reviews.map((review) => (
+              <article key={review} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="mb-4 flex gap-1 text-orange-500" aria-label="Five star review">
+                  {[0, 1, 2, 3, 4].map((star) => (
+                    <Star key={star} size={18} fill="currentColor" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-lg italic">"{review}"</p>
-              </div>
+                <p className="text-lg font-semibold leading-8 text-slate-700">&ldquo;{review}&rdquo;</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-orange-600 py-16 sm:py-20 px-4 text-center text-white">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">Ready to Get Rid of Your Junk?</h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-2xl mx-auto">
-          <a href="https://wa.me/18775865956" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-            <button className="bg-white text-orange-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 font-bold flex items-center justify-center gap-2 w-full text-sm sm:text-base">
+      <section className="bg-orange-600 px-4 py-16 text-center text-white sm:py-20">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-3xl font-black sm:text-4xl">Ready to clear it out?</h2>
+          <p className="mt-4 text-lg leading-8 text-orange-50">
+            Call 877-JUNKY-JO for the fastest confirmation, or send a pre-booking request so we can review the job details before phone confirmation.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <a
+              href={callHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-lg bg-white px-6 py-4 font-black text-orange-700 transition hover:bg-orange-50"
+            >
               <Phone size={20} />
               Call 877-JUNKY-JO
-            </button>
-          </a>
-          <Link href="/contact" className="w-full sm:w-auto">
-            <button className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-white hover:text-orange-600 font-bold flex items-center justify-center gap-2 w-full text-sm sm:text-base">
-              <ClipboardList size={20} />
-              Get Free Estimate Today
-            </button>
-          </Link>
+            </a>
+            <Link
+              href="/book"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-lg border border-white px-6 py-4 font-black text-white transition hover:bg-white hover:text-orange-700"
+            >
+              <CalendarDays size={20} />
+              Pre-Book a Job
+            </Link>
+          </div>
         </div>
       </section>
 

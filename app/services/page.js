@@ -31,7 +31,7 @@ export default function Services() {
                 <h2 className="text-2xl sm:text-3xl font-bold">Junk Removal</h2>
               </div>
               <p className="text-gray-600 text-base sm:text-lg">
-                We remove unwanted items from homes, apartments, and properties — quickly and efficiently. Whether you're decluttering or preparing for a move, we handle it all with care.
+                We remove unwanted items from homes, apartments, and properties — quickly and efficiently. Whether you&apos;re decluttering or preparing for a move, we handle it all with care.
               </p>
             </div>
             <div className="order-1 md:order-2 bg-gradient-to-br from-green-100 to-green-50 rounded-lg overflow-hidden h-64 sm:h-80">
